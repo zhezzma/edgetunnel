@@ -5,7 +5,7 @@
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "start": "wrangler dev --port 7860 --host 0.0.0.0  --log-level debug ",
+    "start": "wrangler dev --port 7860 --ip 0.0.0.0  --log-level debug ",
     "test": "vitest"
   },
   "devDependencies": {
