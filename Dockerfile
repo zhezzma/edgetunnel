@@ -27,8 +27,8 @@ USER nodejs
 RUN mkdir -p /app/node_modules/.mf && \
     mkdir -p /app/.wrangler
 
-RUN CHOWN -R nodejs:nodejs /app/node_modules/.mf && \
-    CHOWN -R nodejs:nodejs /app/.wrangler
+RUN chown -R nodejs:nodejs /app/node_modules/.mf && \
+    chown -R nodejs:nodejs /app/.wrangler
 
 RUN chmod -R 777 /app/node_modules/.mf && \
     chmod -R 777 /app/.wrangler
