@@ -17,7 +17,17 @@ RUN npm install
 
 COPY . .
 
+# 创建 .dev.vars 文件
+RUN touch .dev.vars
 
+# 使用 ARG 接收构建参数
+ARG UUID
+# 将环境变量写入 .dev.vars
+RUN if [ ! -z "${UUID}" ]; then \
+    echo "UUID=${UUID}" >> .dev.vars; \
+    fi
+# 打印 .dev.vars 中的内容以确认
+RUN cat .dev.vars
 
 # 设置目录权限
 RUN chown -R nodejs:nodejs /app
