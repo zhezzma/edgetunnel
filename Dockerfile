@@ -17,27 +17,18 @@ RUN npm install
 
 COPY . .
 
-
 RUN echo "=====> 开始设置环境变量"
-
-
-# 创建 .dev.vars 文件
-RUN touch .dev.vars
-
-
-
 # 声明所有需要的构建参数
 ARG UUID
 # 如果需要在容器运行时使用，转换为环境变量
 ENV UUID=${UUID}
-
 # 方法1：在 RUN 指令中使用双引号打印
-RUN echo "UUID is: ${UUID}"
-
-RUN printenv
-
+# RUN echo "UUID is: ${UUID}"
+# RUN printenv
 # 将环境变量写入 .dev.vars
-RUN echo "UUID=748df15d-cb58-48de-930c-9d6fd68f088e" >> .dev.vars
+RUN echo "UUID=${UUID}" >> .dev.vars
+
+RUN echo "=====> 环境变量设置完成"
 
 # 设置目录权限
 RUN chown -R nodejs:nodejs /app
