@@ -17,6 +17,8 @@ RUN npm install
 
 COPY . .
 
+
+
 # 设置目录权限
 RUN chown -R nodejs:nodejs /app
 
