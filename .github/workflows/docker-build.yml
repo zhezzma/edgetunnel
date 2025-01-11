@@ -29,7 +29,8 @@ jobs:
                     --exclude='.gitignore' \
                     --exclude='node_modules' \
                     --exclude='README.md' \
-                    --exclude='src/source.js' \
+                    --exclude='src/worker-vless.js' \
+                    --exclude='src/worker-with-socks5-experimental.js' \
                     $GITHUB_WORKSPACE/ hf-repo/
           
           cd hf-repo
