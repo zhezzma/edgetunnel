@@ -14,13 +14,15 @@ jobs:
         
       - name: Clone source repository
         run: |
-          git clone https://github.com/cmliu/edgetunnel.git temp_repo
+          git clone https://github.com/cmliu/edgetunnel.git cmliu
+          git clone https://github.com/zizifn/edgetunnel.git zizifn
           
       - name: Copy and rename files
         run: |
           mkdir -p src
-          cp temp_repo/_worker.js src/index.js
-          cp temp_repo/明文源码.js src/source.js
+          cp cmliu/_worker.js src/index.js
+          cp cmliu/明文源码.js src/source.js
+          cp zizifn/src/* src/
           
       - name: Commit and push changes
         run: |
