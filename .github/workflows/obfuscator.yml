@@ -4,7 +4,7 @@ name: Obfuscate and Commit
 on:
     #push:
     #    paths:
-    #        - '明文源码.js'
+    #        - 'worker-vless.js'
     workflow_dispatch:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
 
       - name: Obfuscate code
         run: |
-          javascript-obfuscator src/source.js --output src/index.js \
+          javascript-obfuscator src/worker-vless.js --output src/index.js \
           --compact true \
           --control-flow-flattening true \
           --control-flow-flattening-threshold 1 \
