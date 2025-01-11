@@ -21,7 +21,6 @@ jobs:
         run: |
           mkdir -p src
           cp cmliu/_worker.js src/index.js
-          cp cmliu/明文源码.js src/source.js
           cp zizifn/src/* src/
           
       - name: Commit and push changes
